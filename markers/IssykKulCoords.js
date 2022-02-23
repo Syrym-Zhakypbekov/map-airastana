@@ -1,21 +1,10 @@
 import { map } from "../Map Options/map_options.js";
 import { mapDiv } from "../index.js";
 
-function AktobeCoords(map, markerCity, blueLineSymbol, redLineSymbol) {
-
+function IssykKulCoords(map, markerCity, blueLineSymbol, redLineSymbol) {
   const flightPlanCoordinates = [
-    { lat: 50.2839, lng: 57.167 },
-    { lat: 55.7558, lng: 37.6173 },
-    { lat: 50.2839, lng: 57.167 },
-    { lat: 43.6588, lng: 51.1975 },
-    { lat: 50.2839, lng: 57.167 },
-    { lat: 42.3417, lng: 69.5901 },
-    { lat: 50.2839, lng: 57.167 },
-    { lat: 47.0945, lng: 51.9238 },
-    { lat: 50.2839, lng: 57.167 },
-    { lat: 43.6588, lng: 51.1975 },
-    { lat: 50.2839, lng: 57.167 },
-    { lat: 55.7558, lng: 37.6173 },
+    { lat: 42.3883, lng: 77.2865 },
+              { lat: 43.222, lng: 76.8512 },
   ];
   const flightPath = new google.maps.Polyline({
     path: flightPlanCoordinates,
@@ -36,11 +25,10 @@ function AktobeCoords(map, markerCity, blueLineSymbol, redLineSymbol) {
       document.body.querySelector("div.modal-body").innerHTML =
         `<p>This is my city ${markerCity.getLabel().text}</p>` +
         `<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium perferendis quos molestias, reprehenderit amet placeat vero nostrum distinctio dolores delectus at officiis voluptatem fuga blanditiis aperiam sapiente aut! Pariatur, nobis!</p>` +
-        `<img style="width:100%; height:100%" src="https://image.shutterstock.com/shutterstock/photos/585990431/display_1500/stock-photo-astana-astana-kazakhstan-585990431.jpg">`;
-        if (markerCity.getLabel().text === "Aktobe") {
-          flightPath.setMap(map);
-        }
-      
+        `<center><img style="width:50%; height:50%;" src="https://image.shutterstock.com/shutterstock/photos/585990431/display_1500/stock-photo-astana-astana-kazakhstan-585990431.jpg"></center>`;
+      if (markerCity.getLabel().text === "Issyk-Kul") {
+        flightPath.setMap(map);
+      }
     },
     false
   );
@@ -71,4 +59,4 @@ function AktobeCoords(map, markerCity, blueLineSymbol, redLineSymbol) {
     false
   );
 }
-export { AktobeCoords };
+export { IssykKulCoords };
